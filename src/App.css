@@ -1,0 +1,133 @@
+body {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.square {
+  background-color: green;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+.square:hover {
+  background-color: rgb(20, 73, 20);
+}
+
+.move {
+  position: fixed;
+  top: 5px;
+  right: 25px;
+}
+
+.container {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 8rem;
+  background-color: rgb(50, 129, 153);
+}
+
+.header > h1 {
+  font-weight: 300;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 25px;
+}
+
+.column {
+  flex-direction: row;
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  padding: 2rem;
+}
+
+.column:nth-child(1) {
+  border-right: black 1px solid;
+}
+
+.side-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.5rem;
+}
+
+.side-nav > div {
+  text-decoration: none;
+  border: white solid 1px;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background-color: rgb(50, 129, 153);
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* left: -100px; */
+  /* left: -15px; */
+  /* transition: left 0.5s ease-in; */
+  animation-duration: 1.3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+
+  60% {
+    left: 0px;
+    opacity: 1;
+  }
+
+  70% {
+    left: -3px;
+  }
+
+  75% {
+    left: 3px;
+  }
+
+  80% {
+    left: -3px;
+  }
+  90% {
+    left: 3px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.side-nav > div:hover {
+  transform: scale(1.1);
+  font: bold;
+  background-color: rgb(96, 166, 187);
+  /* left: 0; */
+}
+
+.side-nav p {
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  top: 4px;
+}
