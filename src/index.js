@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import blog1 from './blog1';
-// import './index.css';
 import './App.css';
-// import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { PreviousMap } from '../node_modules/postcss';
 
 const Header = () => (
   <div className="header">
@@ -69,13 +65,13 @@ class App extends React.Component {
     let text;
 
     if (textDescription === 'info') {
-      text = "Here's the info you need. All the info. I hope it is helpful";
+      text = "Here's the info you need. All the info. I hope it is helpful.";
     } else if (textDescription === 'about') {
       text =
-        "Here's the about page. All the about you need. I hope it is aboutful";
+        "Here's the about page. All the about you need. I hope it is aboutful.";
     } else if (textDescription === 'contact') {
       text =
-        "Here's the contact page. All the contacts you need. I hope it is social";
+        "Here's the contact page. All the contacts you need. I hope it is social.";
     }
 
     this.setState(prevState => {
@@ -91,7 +87,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <SuperHeader /> */}
         <Header />
         <TwoColumnLayout content={this.state.blogs} />
         <SideNav getColumnText={this.getColumnText} />;
@@ -100,5 +95,7 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+    <App />,
+  document.getElementById('root')
+);
